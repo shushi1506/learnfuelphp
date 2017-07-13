@@ -9,7 +9,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+<?php if(Session::get_flash('success')){ ?>
+	<div class="alert alert-success"> <?php echo Session::get_flash('success') ?> </div>
+<?php } ?>
 <h2>Listing <span class='muted'>Customer</span></h2>
+
 <div class="container">       
   <br>
    <?php if ($cus): ?>
@@ -32,8 +36,8 @@
 			<td>
 				<div class="btn-toolbar">
 					<div class="btn-group">
-						<button type="button" class="btn btn-default">View</button>
-						<button type="button" class="btn btn-primary">Edit</button>
+						<button type="button" class="btn btn-info">View</button>
+						<button type="button" class="btn btn-warning">Edit</button>
 						<button type="button" class="btn btn-success">Delete</button>
                     </div>
 				</div>
@@ -44,15 +48,13 @@
 </table>
 
 <?php else: ?>
-<p>No Posts.</p>
+<p>No Customer.</p>
 
 <?php endif; ?><p>
-	<?php echo Html::anchor('post/create', 'Add new customer', array('class' => 'btn btn-success')); ?>
+	<?php echo Html::anchor('customer/create', 'Add new customer', array('class' => 'btn btn-success','id' =>'btncreate')); ?>
 
 </p>   
 </div>
-<!-- ffffffffff -->
-
 
 </body>
 </html>
