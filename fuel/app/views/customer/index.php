@@ -11,7 +11,10 @@
 <body>
 <?php if(Session::get_flash('success')){ ?>
 	<div class="alert alert-success"> <?php echo Session::get_flash('success') ?> </div>
-<?php } ?>
+<?php }  ?>
+<?php if(Session::get_flash('error')){ ?>
+	<div class="alert alert-danger"> <?php echo Session::get_flash('error') ?> </div>
+<?php }  ?>
 <h2>Listing <span class='muted'>Customer</span></h2>
 
 <div class="container">       
@@ -36,9 +39,9 @@
 			<td>
 				<div class="btn-toolbar">
 					<div class="btn-group">
-						<button type="button" class="btn btn-info">View</button>
-						<button type="button" class="btn btn-warning">Edit</button>
-						<button type="button" class="btn btn-success">Delete</button>
+					<?php echo Html::anchor('customer/view/'.$item ->id,'View',array('class' =>'btn btn-info' )) ?>
+					<?php echo Html::anchor('customer/edit/'.$item ->id,'Edit',array('class'=>'btn btn-warning'))?>
+					<?php echo Html::anchor('customer/delete/'.$item ->id,'Delete',array('class'=>'btn btn-danger'))?>
                     </div>
 				</div>
 

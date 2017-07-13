@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Add new customer</title>
@@ -15,7 +15,7 @@
   } );
   </script>
 </head>
-<body>
+<body> 
 
 <div class="container">
   <?php echo Form::open(array("class"=>"form-horizontal")); ?>
@@ -50,7 +50,7 @@
 <?php echo Form::close(); ?>
 </div>
 
-</body>
-</html>
+ </body>
+</html> 
 
 
